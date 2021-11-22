@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build:dev": "webpack --config config/webpack/webpack.dev.config.js",
+    "update-types": "elm-ts-interop --output types/elm-app.d.ts",
+    "start:dev": "yarn update-types && webpack-dev-server --config config/webpack/webpack.dev.config.js"
   },
   "author": "Alen Kis",
   "license": "ISC",
@@ -14,8 +16,21 @@
     "react-elm-components": "^1.1.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "@babel/preset-react": "^7.16.0",
     "@types/react": "^17.0.36",
     "@types/react-dom": "^17.0.11",
-    "typescript": "^4.5.2"
+    "babel-loader": "^8.2.3",
+    "elm-hot-webpack-loader": "^1.1.8",
+    "elm-ts-interop": "^0.0.8",
+    "elm-webpack-loader": "^8.0.0",
+    "html-webpack-plugin": "^5.5.0",
+    "ts-loader": "^9.2.6",
+    "typescript": "^4.5.2",
+    "webpack": "^5.64.2",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.5.0",
+    "webpack-merge": "^5.8.0"
   }
 }
